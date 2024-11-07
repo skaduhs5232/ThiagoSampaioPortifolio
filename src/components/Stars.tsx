@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 import { useRef, useState, Suspense } from 'react';
 import * as THREE from 'three';
+import '../assets/styles/Stars.scss';
 
 const generateRandomPositions = (count: number, radius: number): Float32Array => {
   const positions = new Float32Array(count * 3);
@@ -17,7 +18,11 @@ const generateRandomPositions = (count: number, radius: number): Float32Array =>
   return positions;
 };
 
-const Stars: React.FC = () => {
+interface StarsProps {
+  mode: string;
+}
+
+const Stars: React.FC<StarsProps> = ({ mode }) => {
   const ref = useRef<THREE.Group>(null);
   const [positions] = useState(() => generateRandomPositions(5000, 1.2));
 
@@ -33,7 +38,7 @@ const Stars: React.FC = () => {
       <Points positions={positions} stride={3} frustumCulled>
         <PointMaterial
           transparent
-          color="#f272c8"
+          color={mode === 'dark' ? '#f272c8' : '#000000'} // Cor das estrelas conforme o modo
           size={0.002}
           sizeAttenuation
           depthWrite={false}
@@ -43,19 +48,21 @@ const Stars: React.FC = () => {
   );
 };
 
-// Stars.tsx
-const StarsCanvas: React.FC = () => {
+interface StarsCanvasProps {
+  mode: string;
+}
+
+const StarsCanvas: React.FC<StarsCanvasProps> = ({ mode }) => {
   return (
-    <div className="absolute inset-0 w-full h-full z-[-1]">
+    <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100em', zIndex: -1 }}>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
-          <Stars />
+          <Stars mode={mode} />
         </Suspense>
         <Preload all />
       </Canvas>
     </div>
   );
 };
-
 
 export default StarsCanvas;

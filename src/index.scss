@@ -32,12 +32,9 @@ p, a, h1, h2, h3, h4, h5, label, button {
   color: white;
   font-family: "Lato", sans-serif;
 }
-/* src/index.scss */
-.stars-background {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
+// index.scss ou outro arquivo de estilo global
+
+/* index.scss */
 
 .navigation-bar {
   justify-content: space-between;

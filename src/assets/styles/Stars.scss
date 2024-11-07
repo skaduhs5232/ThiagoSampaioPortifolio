@@ -1,0 +1,16 @@
+.stars-background {
+  position: fixed;   /* Fixa o fundo em relação à tela */
+  top: 0;
+  left: 0;
+  width: 100vw;      /* Ocupa toda a largura da janela */
+  height: 100vh;     /* Ocupa toda a altura da janela */
+  z-index: 0;       /* Fica atrás de todo o conteúdo */
+  pointer-events: none; /* Impede que interfira com cliques no conteúdo */
+}
+
+.main-container {
+  position: relative;
+  overflow: hidden; /* Evita problemas com rolagem extra */
+}
+
+
