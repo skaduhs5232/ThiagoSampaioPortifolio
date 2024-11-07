@@ -1,48 +1,119 @@
-.contact_wrapper svg {
-  font-size: 1em;
-  vertical-align: middle;
-  margin-right: 5px;
-}
+// Variáveis de cores para fácil ajuste de tema
+$primary-color: #4A90E2;
+$secondary-color: #f5f5f5;
+$text-color: #333;
+$bg-color: #ffffff;
+$error-color: #e74c3c;
+$button-bg-color: $primary-color;
+$button-hover-color: darken($primary-color, 10%);
+$button-text-color: #ffffff;
 
-.contact-form {
-  padding-top: 20px;
-
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
-  fieldset {
-    background-color: white;
-  }
-}
-
-label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
-}
-
-.form-flex {
+.contact-container {
   display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: $secondary-color;
+
+  .contact-form-wrapper {
+    background-color: $bg-color;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+
+    h1 {
+      font-size: 2rem;
+      color: $text-color;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p {
+      color: darken($text-color, 10%);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .form-field {
+      margin-bottom: 1.5rem;
+      
+      label {
+        font-size: 1rem;
+        color: $text-color;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        color: $text-color;
+        border: 1px solid lighten($text-color, 50%);
+        border-radius: 5px;
+        background-color: $secondary-color;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0px 0px 5px rgba($primary-color, 0.5);
+        }
+      }
+      
+      textarea {
+        resize: vertical;
+      }
+
+      .error-message {
+        color: $error-color;
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+      }
+    }
+
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+
+      button {
+        background-color: $button-bg-color;
+        color: $button-text-color;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          background-color: $button-hover-color;
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
 }
 
-.form-flex .MuiFormControl-root {
-  width: 100%;
-}
-
-form {
-  width: 100% !important;
-}
-
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+// Keyframes para animação de fadeIn
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
