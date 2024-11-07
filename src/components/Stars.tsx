@@ -38,7 +38,7 @@ const Stars: React.FC<StarsProps> = ({ mode }) => {
       <Points positions={positions} stride={3} frustumCulled>
         <PointMaterial
           transparent
-          color={mode === 'dark' ? '#f272c8' : '#000000'} // Cor das estrelas conforme o modo
+          color={mode === 'dark' ? '#f272c8' : '#000000'} 
           size={0.002}
           sizeAttenuation
           depthWrite={false}
