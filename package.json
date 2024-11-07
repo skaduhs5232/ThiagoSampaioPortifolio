@@ -1,8 +1,8 @@
 {
-  "name": "react-portfolio-template",
+  "name": "thiago-sampaio-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yujisatojr.github.io/react-portfolio-template",
+  "homepage": "https://skaduhs5232.github.io/ThiagoSampaioPortifolio",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.11.4",
@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-vertical-timeline-component": "^3.3.6"
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "gh-pages": "^5.0.0"
   }
 }
