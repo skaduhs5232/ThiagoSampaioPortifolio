@@ -78,10 +78,19 @@ const Navigation: React.FC<NavigationProps> = ({ parentToChild, modeChange }) =>
     </Box>
   );
 
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
+          return (
+            <Box sx={{ display: 'flex' }}>
+              <CssBaseline />
+              <AppBar
+          component="nav"
+          id="navigation"
+          className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}
+          sx={{
+            backgroundColor: scrolled ? 'transparent' : 'transparent', // Transparente e escurecendo ao rolar
+            boxShadow: 'none',
+            transition: 'background-color 0.3s ease',
+          }}
+        >
         <Toolbar className="navigation-bar">
           <IconButton
             color="inherit"

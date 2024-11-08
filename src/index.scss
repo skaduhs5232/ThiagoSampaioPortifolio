@@ -38,7 +38,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: transparent;
 
   button {
     font-size: 1.1rem;
@@ -51,6 +51,9 @@ p, a, h1, h2, h3, h4, h5, label, button {
     cursor: pointer;
   }
 }
+.css-13vb7vl-MuiPaper-root-MuiAppBar-root {
+  background-color: transparent !important;
+}
 
 .navigation-bar-responsive {
   span, p {
@@ -60,12 +63,13 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 .container {
-  margin-top: 64px;
+  /* margin-top: 64px; */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100dvh;
 }
 
 .header-image {
@@ -99,7 +103,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
   background-color: #f8f9fa;
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    background-color: transparent;
   }
 
   p, a, h1, h2, h3, h4, h5, label, button {

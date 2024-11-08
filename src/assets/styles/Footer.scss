@@ -1,4 +1,4 @@
-footer {
+/* footer {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -12,4 +12,54 @@ footer {
     p {
         font-size: 0.8em;
     }
-}
+} */
+
+.footer {
+    z-index: 999;
+    padding: 2rem;
+    color: #c9d1d9; // Texto em cinza claro para bom contraste
+    text-align: center;
+  
+    &__icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem; // Espaço entre os ícones
+      margin-bottom: 1rem;
+      z-index: 999;
+  
+      a {
+        color: #c9d1d9;
+        transition: color 0.3s ease, transform 0.3s ease;
+        z-index: 999;
+  
+        &:hover {
+          color: #1f6feb; // Azul claro no hover para destacar
+          transform: scale(1.2); // Aumenta o ícone ao passar o mouse
+        }
+  
+        svg {
+          font-size: 2rem;
+          z-index: 999;
+        }
+      }
+    }
+  
+    &__text {
+      font-size: 0.9rem;
+      color: #8b949e; // Cinza mais suave para o texto do rodapé
+      z-index: 999;
+  
+      a {
+        color: #1674e0; // Azul para o link do criador
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        z-index: 999;
+  
+        &:hover {
+          color: #1f6feb; // Azul mais escuro ao passar o mouse
+        }
+      }
+    }
+  }
+  
