@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ThiagoSampaioPortifolio/static/css/main.43658145.css",
-    "main.js": "/ThiagoSampaioPortifolio/static/js/main.22d43949.js",
+    "main.css": "/ThiagoSampaioPortifolio/static/css/main.040a74b6.css",
+    "main.js": "/ThiagoSampaioPortifolio/static/js/main.369a5d50.js",
     "static/js/453.d256858d.chunk.js": "/ThiagoSampaioPortifolio/static/js/453.d256858d.chunk.js",
     "static/media/mock10.png": "/ThiagoSampaioPortifolio/static/media/mock10.2d05b02ba569a430a255.png",
     "static/media/mock09.png": "/ThiagoSampaioPortifolio/static/media/mock09.e18677ccfc932e52d754.png",
@@ -12,16 +12,17 @@
     "static/media/mock05.png": "/ThiagoSampaioPortifolio/static/media/mock05.4faafa70d200d1519a34.png",
     "static/media/mock06.png": "/ThiagoSampaioPortifolio/static/media/mock06.ea816617e0d0fa0f63ca.png",
     "static/media/bg-dark.png": "/ThiagoSampaioPortifolio/static/media/bg-dark.f420c6b8458af72de935.png",
+    "static/media/image.png": "/ThiagoSampaioPortifolio/static/media/image.5eb2861e2cc9dcbdcd3c.png",
     "static/media/mock01.png": "/ThiagoSampaioPortifolio/static/media/mock01.61bd486a54bf6e17ee5a.png",
     "static/media/mock02.png": "/ThiagoSampaioPortifolio/static/media/mock02.bced48ae9cdda3acf1a3.png",
     "static/media/mock03.png": "/ThiagoSampaioPortifolio/static/media/mock03.a4600719e0b5d2a3155b.png",
     "index.html": "/ThiagoSampaioPortifolio/index.html",
-    "main.43658145.css.map": "/ThiagoSampaioPortifolio/static/css/main.43658145.css.map",
-    "main.22d43949.js.map": "/ThiagoSampaioPortifolio/static/js/main.22d43949.js.map",
+    "main.040a74b6.css.map": "/ThiagoSampaioPortifolio/static/css/main.040a74b6.css.map",
+    "main.369a5d50.js.map": "/ThiagoSampaioPortifolio/static/js/main.369a5d50.js.map",
     "453.d256858d.chunk.js.map": "/ThiagoSampaioPortifolio/static/js/453.d256858d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43658145.css",
-    "static/js/main.22d43949.js"
+    "static/css/main.040a74b6.css",
+    "static/js/main.369a5d50.js"
   ]
 }
