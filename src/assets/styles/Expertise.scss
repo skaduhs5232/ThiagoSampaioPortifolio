@@ -1,11 +1,14 @@
 .expertise-container {
   position: relative;
   padding: 2rem;
+  margin-top: 9%;
 }
 
 .expertise-title {
-  margin-top: 50px;
-  margin-left: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto 10%;
 }
 
 .icons-grid {
@@ -14,7 +17,9 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 1rem;
-  margin: 4em 10em 0em 10em;
+  margin: 0 auto;
+    margin-top: 100px;
+
 }
 
 .icon-wrapper {
@@ -26,12 +31,55 @@
   cursor: pointer;
 }
 
-// Aumenta o ícone ao passar o mouse
+/* Aumenta o ícone ao passar o mouse */
 .icon-wrapper:hover .tech-icon {
-  transform: scale(4.3);
+  transform: scale(1.2); /* Escala ligeiramente maior ao passar o mouse */
 }
 
-// Reduz o tamanho dos ícones não selecionados, mas sem escurecer
+/* Reduz o tamanho dos ícones não selecionados sem escurecer */
 .icons-grid:hover .icon-wrapper:not(:hover) {
-  transform: scale(0.8); // Reduz os ícones ao redor para 0.8x sem escurecer
+  transform: scale(0.9); /* Reduz os ícones ao redor para 0.9x sem escurecer */
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 769px) {
+  .icons-grid {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .expertise-container {
+    padding: 1rem;
+  }
+
+  .icons-grid {
+    gap: 1rem;
+  }
+
+  .icon-wrapper {
+    flex: 1 1 20%; /* Mostra aproximadamente 5 ícones por linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .icons-grid {
+    gap: 0.5rem;
+  }
+
+  .icon-wrapper {
+    flex: 1 1 25%; /* Mostra aproximadamente 4 ícones por linha */
+  }
+
+  /* Ajusta o tamanho dos ícones para que não fiquem grandes demais em telas menores */
+  .icon-wrapper .tech-icon {
+    font-size: 2.5em;
+  }
+
+  /* Ajuste de escala no hover para telas pequenas */
+  .icon-wrapper:hover .tech-icon {
+    transform: scale(1.1); /* Menor aumento no hover em telas pequenas */
+  }
 }
