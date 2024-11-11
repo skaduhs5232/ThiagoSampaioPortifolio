@@ -6,13 +6,14 @@ import {
   SiIntellijidea, SiEclipseide, SiWordpress
 } from 'react-icons/si';
 
-import { FaDatabase, FaServer, FaShapes } from 'react-icons/fa'; // Ícones extras
+import { FaDatabase, FaJava, FaServer, FaShapes } from 'react-icons/fa'; // Ícones extras
 import '../assets/styles/Expertise.scss';
 
 // Lista de tecnologias com os ícones e cores
 const techIcons = [
   { component: <SiTypescript size="3em" color="#3178C6" />, label: "TypeScript" },  // TypeScript
   { component: <SiJavascript size="3em" color="#F7DF1E" />, label: "JavaScript" },
+  {component: <FaJava size="3em" color="#007396" />, label: "Java" },
   { component: <SiCss3 size="3em" color="#1572B6" />, label: "CSS" },
   { component: <SiSass size="3em" color="#CC6699" />, label: "SCSS" },
   { component: <SiHtml5 size="3em" color="#E34F26" />, label: "HTML" },

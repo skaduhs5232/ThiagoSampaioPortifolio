@@ -5,6 +5,9 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
+import { SiAngular, SiJavascript, SiTypescript } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import cristhus from '../assets/images/cristhus.png';
 
 function Timeline() {
   return (
@@ -15,25 +18,32 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
-            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            contentArrowStyle={{ borderRight: '7px solid white' }}
             date="2022 - present"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)', padding: '5px' }}
+            icon={<img src={cristhus} alt="Custom Icon" style={{ width: '100%', height: '100%' }} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Full-Stack Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Unichristus</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Full-stack Web Development
             </p>
+            <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+              <SiTypescript size="1.5em" color="#3178C6" />
+              <SiJavascript size="1.5em" color="#F7DF1E" />
+              <SiAngular size="1.5em" color="#DD0031" />
+              <FaJava size="1.5em" color="#007396" />
+            </div>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2020 - 2022"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Freelancer Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Sandiê</h4>
             <p>
               Frontend Development, Backend Development, User Experience, Team Leading
             </p>
