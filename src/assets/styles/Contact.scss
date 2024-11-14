@@ -1,48 +1,76 @@
-.contact_wrapper svg {
-  font-size: 1em;
-  vertical-align: middle;
-  margin-right: 5px;
+#contact {
+  position: relative;
+  z-index: 1000; // Garanta que o formulário esteja no topo
+  padding: 2rem;
+  background-color: transparent;
+ 
 }
 
-.contact-form {
-  padding-top: 20px;
-
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
-  fieldset {
-    background-color: white;
-  }
-}
-
-label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
-}
-
-.form-flex {
+/* .contact-container {
   display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
-}
+  justify-content: center;
+  align-items: center;
+} */
 
-.form-flex .MuiFormControl-root {
+.contact_wrapper {
+ // max-width: 600px;
   width: 100%;
+  background: #192029;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
 }
 
-form {
-  width: 100% !important;
+h1 {
+  font-size: 2rem;
 }
 
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+p {
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.contact-form .form-flex {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+   color: #ffffff;
+}
+
+.contact-form .body-form {
+  width: 100%;
+  margin-bottom: 1.5rem;
+   color: #ffffff;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #74125e;
+  color: white;
+  &:hover {
+    background-color: #005bb5;
+  }
+}
+.status-message {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+
+  &.success {
+    color: #4caf50;
+    background-color: #e8f5e9;
+  }
+
+  &.error {
+    color: #f44336;
+    background-color: #ffebee;
+  }
+
+  svg {
+    margin-right: 0.5rem;
+  }
 }

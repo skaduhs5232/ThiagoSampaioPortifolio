@@ -39,7 +39,7 @@ function App() {
         <Timeline />
         <Project />
         <div className="relative z-10">
-          <Contact />
+          <Contact  /> {/* Passa idName para Contact */}
         </div>
       </FadeIn>
       <Footer />
