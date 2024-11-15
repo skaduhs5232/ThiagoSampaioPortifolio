@@ -1,28 +1,24 @@
 {
   "files": {
-    "main.css": "/ThiagoSampaioPortifolio/static/css/main.040a74b6.css",
-    "main.js": "/ThiagoSampaioPortifolio/static/js/main.369a5d50.js",
+    "main.css": "/ThiagoSampaioPortifolio/static/css/main.4417a869.css",
+    "main.js": "/ThiagoSampaioPortifolio/static/js/main.3860f781.js",
     "static/js/453.d256858d.chunk.js": "/ThiagoSampaioPortifolio/static/js/453.d256858d.chunk.js",
-    "static/media/mock10.png": "/ThiagoSampaioPortifolio/static/media/mock10.2d05b02ba569a430a255.png",
-    "static/media/mock09.png": "/ThiagoSampaioPortifolio/static/media/mock09.e18677ccfc932e52d754.png",
-    "static/media/mock08.png": "/ThiagoSampaioPortifolio/static/media/mock08.13f46873fdbd382f4b76.png",
     "static/media/mock04.png": "/ThiagoSampaioPortifolio/static/media/mock04.f7b5679efade992a078c.png",
     "static/media/bg-light.png": "/ThiagoSampaioPortifolio/static/media/bg-light.bac0efb485244a522981.png",
-    "static/media/mock07.png": "/ThiagoSampaioPortifolio/static/media/mock07.3f1110f482232b33c6a2.png",
     "static/media/mock05.png": "/ThiagoSampaioPortifolio/static/media/mock05.4faafa70d200d1519a34.png",
-    "static/media/mock06.png": "/ThiagoSampaioPortifolio/static/media/mock06.ea816617e0d0fa0f63ca.png",
     "static/media/bg-dark.png": "/ThiagoSampaioPortifolio/static/media/bg-dark.f420c6b8458af72de935.png",
     "static/media/image.png": "/ThiagoSampaioPortifolio/static/media/image.5eb2861e2cc9dcbdcd3c.png",
-    "static/media/mock01.png": "/ThiagoSampaioPortifolio/static/media/mock01.61bd486a54bf6e17ee5a.png",
-    "static/media/mock02.png": "/ThiagoSampaioPortifolio/static/media/mock02.bced48ae9cdda3acf1a3.png",
-    "static/media/mock03.png": "/ThiagoSampaioPortifolio/static/media/mock03.a4600719e0b5d2a3155b.png",
+    "static/media/mock10.png": "/ThiagoSampaioPortifolio/static/media/mock10.14bfdf9e3675709014ef.png",
+    "static/media/mock09.png": "/ThiagoSampaioPortifolio/static/media/mock09.1b2731439a78363b7425.png",
+    "static/media/sandie.png": "/ThiagoSampaioPortifolio/static/media/sandie.47cc7ad918d00bc45f0f.png",
+    "static/media/cristhus.png": "/ThiagoSampaioPortifolio/static/media/cristhus.ce6c38f9d806804acd5f.png",
     "index.html": "/ThiagoSampaioPortifolio/index.html",
-    "main.040a74b6.css.map": "/ThiagoSampaioPortifolio/static/css/main.040a74b6.css.map",
-    "main.369a5d50.js.map": "/ThiagoSampaioPortifolio/static/js/main.369a5d50.js.map",
+    "main.4417a869.css.map": "/ThiagoSampaioPortifolio/static/css/main.4417a869.css.map",
+    "main.3860f781.js.map": "/ThiagoSampaioPortifolio/static/js/main.3860f781.js.map",
     "453.d256858d.chunk.js.map": "/ThiagoSampaioPortifolio/static/js/453.d256858d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.040a74b6.css",
-    "static/js/main.369a5d50.js"
+    "static/css/main.4417a869.css",
+    "static/js/main.3860f781.js"
   ]
 }
