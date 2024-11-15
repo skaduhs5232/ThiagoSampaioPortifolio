@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useState, useEffect } from "react";
 import {
   Main,
@@ -39,7 +38,7 @@ function App() {
         <Timeline />
         <Project />
         <div className="relative z-10">
-          <Contact  /> {/* Passa idName para Contact */}
+          <Contact mode={mode} /> {/* Passando 'mode' para Contact */}
         </div>
       </FadeIn>
       <Footer />

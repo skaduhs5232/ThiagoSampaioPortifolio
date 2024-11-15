@@ -1,13 +1,17 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress'; 
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import emailjs from '@emailjs/browser';
 
-function Contact() {
+interface ContactProps {
+  mode: string; // Recebendo a prop de modo
+}
 
+const Contact: React.FC<ContactProps> = ({ mode }) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
@@ -16,76 +20,96 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
-  const form = useRef();
+  const [successMessage, setSuccessMessage] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false); // Estado para o loader
 
-  const sendEmail = (e: any) => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
+    // Validação dos campos
+    const isNameValid = name.trim() !== '';
+    const isEmailValid = email.trim() !== '' && /\S+@\S+\.\S+/.test(email);
+    const isMessageValid = message.trim() !== '';
 
-    /* Uncomment below if you want to enable the emailJS */
+    setNameError(!isNameValid);
+    setEmailError(!isEmailValid);
+    setMessageError(!isMessageValid);
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (!isNameValid || !isEmailValid || !isMessageValid) {
+      setErrorMessage('Please fill out all fields correctly.');
+      return;
+    }
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+    // Lógica de envio de e-mail
+    if (form.current) {
+      setIsLoading(true); // Ativando o loader
+      emailjs
+        .sendForm(
+          'service_pz8i87r', // Service ID
+          'template_xj17ilb', // Template ID
+          form.current, // Referência ao formulário
+          'l0_NWAXxX9SmqjzIw' // Public Key
+        )
+        .then(
+          (result) => {
+            console.log('Email sent:', result.text);
+            setSuccessMessage('Email sent successfully!');
+            setErrorMessage('');
+            setName('');
+            setEmail('');
+            setMessage('');
+          },
+          (error) => {
+            console.error('Email error:', error.text);
+            setErrorMessage('An error occurred while sending the email. Please try again.');
+            setSuccessMessage('');
+          }
+        )
+        .finally(() => {
+          setIsLoading(false); // Desativando o loader
+        });
+    }
   };
 
   return (
     <div id="contact">
       <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
+        <div className={`contact_wrapper ${mode}-mode`}>
+          <h1>Get in Touch</h1>
           <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
           <Box
             ref={form}
             component="form"
             noValidate
             autoComplete="off"
-            className='contact-form'
+            className="contact-form"
+            onSubmit={sendEmail} // Submit do formulário
           >
-            <div className='form-flex'>
+            <div className="form-flex">
               <TextField
                 required
                 id="outlined-required"
                 label="Your Name"
                 placeholder="What's your name?"
                 value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
+                onChange={(e) => setName(e.target.value)}
+                name="user_name"
                 error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
+                helperText={nameError ? 'Please enter your name' : ''}
               />
               <TextField
                 required
                 id="outlined-required"
-                label="Email / Phone"
+                label="Email"
                 placeholder="How can I reach you?"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={(e) => setEmail(e.target.value)}
+                name="user_email"
                 error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                helperText={emailError ? 'Please enter a valid email address' : ''}
               />
             </div>
             <TextField
@@ -97,20 +121,26 @@ function Contact() {
               rows={10}
               className="body-form"
               value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
+              onChange={(e) => setMessage(e.target.value)}
+              name="message"
               error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
+              helperText={messageError ? 'Please enter the message' : ''}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
+            <Button
+              variant="contained"
+              endIcon={!isLoading && <SendIcon />} // Mostrar ícone apenas quando não estiver carregando
+              type="submit"
+              disabled={isLoading} // Desativar o botão durante o envio
+            >
+              {isLoading ? <CircularProgress size={24} color="inherit" /> : 'Send'} {/* Loader */}
             </Button>
           </Box>
+          {successMessage && <p className="success-message">{successMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Contact;

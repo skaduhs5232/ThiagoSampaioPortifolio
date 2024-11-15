@@ -1,76 +1,146 @@
-#contact {
-  position: relative;
-  z-index: 1000; // Garanta que o formulário esteja no topo
-  padding: 2rem;
-  background-color: transparent;
- 
+/* Contact.scss */
+
+/* Definição das variáveis de cores para o tema claro */
+.light-mode {
+  --primary-color: #ffffff;
+  --secondary-color: #f0f0f0;
+  --text-color: #333333;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #cccccc;
+
+  /* Variáveis para os estados de hover e active do botão */
+  --button-bg-hover: #3399ff; /* cor mais clara */
+  --button-bg-active: #0056b3; /* cor mais escura */
 }
 
-/* .contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+/* Definição das variáveis de cores para o tema escuro */
+.dark-mode {
+  --primary-color: #333333;
+  --secondary-color: #444444;
+  --text-color: #f0f0f0;
+  --button-bg: #4444ff;
+  --button-text: #ffffff;
+  --input-bg: #555555;
+  --input-border: #777777;
 
+  /* Variáveis para os estados de hover e active do botão */
+  --button-bg-hover: #6666ff; /* cor mais clara */
+  --button-bg-active: #2222aa; /* cor mais escura */
+}
+
+/* Estilos gerais do contêiner de contato */
 .contact_wrapper {
- // max-width: 600px;
-  width: 100%;
-  background: #192029;
   padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  h1,
+  p {
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-flex {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Estilos para os inputs */
+   .MuiTextField-root {
+  width: 100%;
+  max-width: 49.3%; /* Padrão para telas maiores */
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000; 
-}
 
-h1 {
-  font-size: 2rem;
-}
+  /* Estilos para o texto dentro dos inputs */
+  input,
+  textarea {
+    color: var(--text-color);
+  }
 
-p {
-  margin-bottom: 2rem;
-  color: #ffffff;
-}
+  .MuiInputLabel-root {
+    color: var(--text-color);
+  }
 
-.contact-form .form-flex {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-   color: #ffffff;
-}
+  .MuiOutlinedInput-root {
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: var(--button-bg); /* Cor da borda ao focar */
+    }
+  }
 
-.contact-form .body-form {
-  width: 100%;
-  margin-bottom: 1.5rem;
-   color: #ffffff;
-}
-
-button[type="submit"] {
-  width: 100%;
-  background-color: #74125e;
-  color: white;
-  &:hover {
-    background-color: #005bb5;
+  .MuiFormHelperText-root {
+    color: var(--button-bg);
   }
 }
-.status-message {
-  display: flex;
-  align-items: center;
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+  .MuiTextField-root {
+    max-width: 46.3%; /* Reduz o tamanho máximo em telas menores */
+  }
+}
+
+
+    /* Estilo específico para o campo de mensagem */
+    .body-form {
+      width: 100%;
+      max-width: 100%;
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+    }
+
+    /* Estilos para o botão */
+    .MuiButton-root {
+    margin-left:10px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    width: 98%;
+    text-transform: none;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background-color: var(--button-bg-hover);
+        transform: scale(1.05);
+      }
+
+      &:active {
+        background-color: var(--button-bg-active);
+        transform: scale(1);
+      }
+    }
+  }
+}
+.success-message {
+  color: green;
+  font-size: 1rem;
   margin-top: 1rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-
-  &.success {
-    color: #4caf50;
-    background-color: #e8f5e9;
-  }
-
-  &.error {
-    color: #f44336;
-    background-color: #ffebee;
-  }
-
-  svg {
-    margin-right: 0.5rem;
-  }
 }
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
