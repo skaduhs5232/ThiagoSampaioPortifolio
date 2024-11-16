@@ -13,11 +13,6 @@ Bem-vindo ao meu projeto desenvolvido em **React**! Este é um site moderno e es
 
 ---
 
-## 📸 **Demonstração**
-
-Confira a aplicação em ação! (adicione um link para o deploy ou capture uma imagem/gif)
-
----
 
 ## ⚙️ **Pré-requisitos**
 
@@ -34,3 +29,4 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
    ```bash
    git clone https://github.com/seu-usuario/seu-projeto.git
    cd seu-projeto
+   npm start
